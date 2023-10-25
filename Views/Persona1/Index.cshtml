@@ -1,0 +1,333 @@
+﻿@model List<Persona1>;
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js" integrity="sha512-DHNepbIus9t4e6YoMBSJLwl+nnm0tIwMBonsQQ+W9NKN6gVVVbomJs9Ii3mQ+HzGZiU5FyJLdnAz9a63ZgZvTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/site.js"></script>
+     
+    <title>Porfolio</title>
+</head>
+<body>
+    <!-- Secciòn INICIO -->
+    <span class="sombra">
+        <section id="inicio" class="inicio">
+            <div class="contenido">
+                <header>
+                    <div class="logo">
+                        <i class="fa fa-moon"> </i><i class="fa fa-heart"></i><i class="fa fa-star"></i>
+                        <img src="img/portafolio.png" height="32" width="32"/>
+                        
+                        @foreach(var item in Model){
+                        <h1> @item.Nombre </h1>
+
+                                                   }
+                        
+                    </div>
+                    <nav id="nav" class="indice" >
+                        <a href="#inicio">Perfil</a>
+                        <a href="#servicios">Sobre mi</a>
+                        <a href="#habilidades">Habilidades en programacion</a>
+                        <a href="#trabajos">Trabajos</a>
+                        <a href="#contacto">Mi Contacto</a>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <div class="redes">
+                        <a href="https://x.com/tacorigo?t=ttBSN3VNMNsWeR9eHeIkag&s=08"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/rigo.lg.35"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </header>
+
+                <div class="fila">
+                    <div class="col">
+                        <h2>Desarrollador Fullstack</h2>
+                        @foreach(var item in Model){
+                            <p> @item.Descripcionfullstack </p>
+
+                                                   }
+                        <button class="btn btn-1" href="https://github.com">GitHub personal</button>
+                    </div>
+                    <div class="col">
+                        <div class="contenedor-img">
+                            <img src="img/perfil.jpg"  alt="no esta perfil">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </span>
+
+    <!-- sección SERVICIOS -->
+    <section id="servicios" class="servicios">
+        <div class="fila">
+            <div class="col">
+                <div class="card">
+                    <div class="icono color1">
+                        <div class="circulo">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                    </div>
+                    <h3>Lenguajes de Programacion</h3>
+                    <p>Suelo utilizar los lenguajes de c#, js y css principalmente y estudiando secundariamente python en mis tiempos libres. </p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="icono color2">
+                        <div class="circulo">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                    </div>
+                    <h3>Musica</h3>
+                    <p>Link para API de musica en proceso Haz clic en el icono, para acceder a un gran repertorio de musica a tu gusto personal, algunas de las recomendaciones son: Bestia-cuarteto de Nos y ODO-ADO. </p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="icono color3">
+                        <div class="circulo">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                    </div>
+                    <h3>Cursos</h3>
+                    <p>He llevado cursos basicos de Html en preparatoria y mi curso actual de universidad en desarrollo de software multiplataforma estudiando programacion con c# principalmente y un poco de css y js solamente hasta ahora, espero poder estudiar mas a fondo a continuacion.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="col">
+                <div class="card">
+                    <div class="icono color1">
+                        <div class="circulo">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </div>
+                    </div>
+                    <h3>Metas</h3>
+                    <p>Se espara poder realizar trabajos en su mayoria de apoyo con frontend y una parte de backend, como el poder pertenecer a una empresa mayormente dedicada a la musica o arte.</p>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="icono color2">
+                        <div class="circulo">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                    </div>
+                    <h3>Soporte Clientes</h3>
+                    <p>Disponible de 8:00MX a 9:00MX para cualquier inconveniente o duda, se intentara dar respuesta en un plazo de 30 min a 1 hr.
+                        Cualquier duda contactarse directamente en el apartado <a href="#contacto">Mi Contacto</a>
+                    </p>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="icono color3">
+                        <div class="circulo">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                    </div>
+                    <h3>Experiencia Laboral</h3>
+                    <p>Programador junior sin experencia en campo real de trabajo, buscando oportunidades de crecer.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sección habilidades -->
+    <section class="habilidades" id="habilidades">
+        <div class="contenedor-habi">
+            <h2>Habilidades</h2>
+            <div class="fila">
+                <div class="col">
+                    <div class="score">
+                        <div class="box">
+                            <div class="chart" data-percent="95">
+                                60%
+                            </div>
+                            <h2>HTML & CSS</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="score">
+                        <div class="box">
+                            <div class="chart" data-percent="90">
+                                0%
+                            </div>
+                            <h2>BOOSTRAP</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="score">
+                        <div class="box">
+                            <div class="chart" data-percent="85">
+                                15%
+                            </div>
+                            <h2>JAVASCRIPT</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col">
+                    <div class="score">
+                        <div class="box">
+                            <div class="chart" data-percent="70">
+                                55%
+                            </div>
+                            <h2>MYSQL</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="score">
+                        <div class="box">
+                            <div class="chart" data-percent="90">
+                                5%
+                            </div>
+                            <h2>PHYTON</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="score">
+                        <div class="box">
+                            <div class="chart" data-percent="90">
+                                80%
+                            </div>
+                            <h2>PHOTOSHOP</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sección trabajos -->
+    <section class="trabajos" id="trabajos">
+        <h2>Mis Trabajos</h2>
+
+        <nav>
+            <a href="javascript:void(0)" class="borde" id="item" onclick="verCategoria('item')">Todos</a>
+            <a href="javascript:void(0)" class="" id="disenio" onclick="verCategoria('disenio')">Diseño</a>
+            <a href="javascript:void(0)" class="" id="programacion" onclick="verCategoria('programacion')">Programación</a>
+            <a href="javascript:void(0)" class="" id="animaciones" onclick="verCategoria('animaciones')">API</a>
+        </nav>
+
+        <div class="galeria">
+            <div class="item programacion">
+                <img src="img/EjerciciosBusqueda.png" alt="no disponible">
+                <div class="info">
+                    <h3>ejerciciosDeBusqueda_RLG</h3>
+                    <span>consola</span><span>css</span><span>C#</span>
+                    <a href="https://github.com/rigolook/ejerciciosDeBusqueda_RLG.git">Ver Trabajo</a>
+                </div>
+            </div>
+            <div class="item programacion animaciones">
+                <img src="img/crudUbicaciones.png" alt="no disponible">
+                <div class="info">
+                    <h3>CrudUbicaciones_RLG</h3>
+                    <span>html</span><span>css</span><span>javascript</span><span>C#</span>
+                    <a href="https://github.com/rigolook/CrudUbicaciones_RLG">Ver Trabajo</a>
+                </div>
+            </div>
+            <div class="item disenio">
+                <img src="img/sistemaAsesoria.png" alt="no disponible">
+                <div class="info">
+                    <h3>Sistema De Asesorias</h3>
+                    <span>html</span><span>css</span><span>C#</span>
+                    <a href="https://github.com/rigolook/SistemaDeAsesorias.git">Ver Trabajo</a>
+                </div>
+            </div>
+            <div class="item disenio">
+                <img src="img/MVVMpractica.png" alt="no disponible">
+                <div class="info">
+                    <h3>MVVM_RLG</h3>
+                    <span>html</span><span>css</span><span>C#</span>
+                    <a href="https://github.com/rigolook/MVVM_RLG.git">Ver Trabajo</a>
+                </div>
+            </div>
+            <div class="item animaciones">
+                <img src="img/apiPokemon.png" alt="no disponible">
+                <div class="info">
+                    <h3>API Pokemon</h3>
+                    <span>html</span><span>css</span><span>javascript</span>
+                    <a href="https://github.com/rigolook/APIpokemon.git">Ver Trabajo</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- sección contacto -->
+    <section class="contacto" id="contacto">
+        <div class="contenedor-contacto">
+            <h2>Contactame por:</h2>
+            <div class="fila">
+                <div class="col">
+                    <div class="info">
+                        <h3>Email:</h3>
+                        @foreach (var item in Model)
+                        {
+                            <p> @item.Email </p>
+                        }
+                    </div>
+                    <div class="info">
+                        <h3>Teléfono:</h3>
+                        @foreach (var item in Model)
+                        {
+                            <p> @item.Telefono </p>
+                        }
+
+                    </div>
+                    <div class="info">
+                        <h3>País</h3>
+                        @foreach (var item in Model)
+                        {
+                            <p> @item.Pais </p>
+                        }
+                    </div>
+                    <div class="info">
+                        <h3>Ciudad:</h3>
+                        @foreach (var item in Model)
+                        {
+                            <p> @item.Ciudad </p>
+                        }
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" placeholder="Nombre...">
+                    <input type="text" placeholder="Correo...">
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <input type="submit" value="Enviar" class="btn">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>portafolio web 2023</p>
+    </footer>
+    
+</body>
+</html>
